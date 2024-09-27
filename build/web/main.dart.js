@@ -64210,7 +64210,7 @@ s=q}while(true)switch(s){case 0:f=""
 q=3
 n.ay.$1(!0)
 s=6
-return A.V(A.aAc(A.eD("https://pixabay.com/api/?key=46209610-119bffd2f14f2de1975a7b715&q="+A.k(f)+"&image_type=photo&per_page=20&page="+n.ch,0,null)),$async$oz)
+return A.V(A.aAc(A.eD("https://pixabay.com/api/?key=&q="+A.k(f)+"&image_type=photo&per_page=20&page="+n.ch,0,null)),$async$oz)
 case 6:m=b
 if(m.b===200){i=m
 l=B.cq.dq(0,A.azW(J.b8(A.ay6(i.e).c.a,"charset")).dq(0,i.w))
