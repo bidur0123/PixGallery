@@ -25,7 +25,7 @@ jobs:
           echo '{"api_key": "${{ secrets.PIXABAY_API_KEY }}"}' > assets/config.json
 
       - name: Build Flutter web app
-        run: flutter build web --release
+        run: flutter build web --base-href "/PixGallery/" --release
 
       - name: Remove old gh-pages files
         run: |
