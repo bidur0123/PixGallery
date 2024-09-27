@@ -6,7 +6,7 @@ import '../utils/constants.dart';
 class ApiService {
   static Future<List<ImageModel>> fetchImages(int page) async {
     final response = await http.get(Uri.parse(
-      'https://pixabay.com/api/?key=$api_key&image_type=photo&page=$page&per_page=20',
+      'https://pixabay.com/api/?key=${AppConfig.apiKey}&image_type=photo&page=$page&per_page=20',
     ));
 
     if (response.statusCode == 200) {

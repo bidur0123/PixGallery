@@ -1,28 +1,28 @@
-name: PixGallery
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Or your default branch name
+      - main  # or your default branch
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Set up Flutter
-        uses: flutter/setup-flutter@v2
+        uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.10.0' # Specify a stable version, adjust as necessary
+          flutter-version: '3.2.3'
 
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Inject API Key
-        run: echo "const String apiKey = '${{ secrets.PIXABAY_API_KEY }}';" > lib/utils/constants.dart
+      - name: Generate config.json with API key
+        run: |
+          echo '{"api_key": "${{ secrets.PIXABAY_API_KEY }}"}' > assets/config.json
 
       - name: Build Flutter web app
         run: flutter build web --release

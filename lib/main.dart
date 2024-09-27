@@ -1,9 +1,23 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import 'routes/app_pages.dart';
 import 'utils/theme.dart';
 
-void main() {
+class AppConfig {
+  static String apiKey = '';
+
+  static Future<void> loadConfig() async {
+    final configString = await rootBundle.loadString('assets/config.json');
+    final configData = json.decode(configString);
+    apiKey = configData['api_key'];
+  }
+}
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await AppConfig.loadConfig();
   runApp(PixGalleryApp());
 }
 
