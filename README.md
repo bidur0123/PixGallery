@@ -37,7 +37,7 @@ To run this project locally:
 
 - Add the Pixabay API key as a GitHub secret named PIXABAY_API_KEY.
 - The workflow will create the config.json file in the assets/ directory and handle the deployment.
-- 
+
 ## Technologies Used
 - Flutter
 - GetX for state management
