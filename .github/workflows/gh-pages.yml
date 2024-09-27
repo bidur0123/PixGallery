@@ -10,19 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 'Set Flutter 3.10.6'
-        uses: subosito/flutter-action@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Flutter
+        uses: flutter/setup-flutter@v2
         with:
-          flutter-version: 3.10.6
-
-      - name: 'Checkout Flutter 3.10.7'
-        shell: bash
-      - run: |
-          cd $FLUTTER_ROOT;
-          git fetch --tags;
-          git checkout 3.10.7;
-          flutter --version;
-
+          flutter-version: '3.24.3'
 
       - name: Install dependencies
         run: flutter pub get
