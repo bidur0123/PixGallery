@@ -43,4 +43,3 @@ app.*.map.json
 
 /build/app/outputs/
 node_modules/
-assets/config.json
