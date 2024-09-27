@@ -8,16 +8,20 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
-        id: flutter-action
-        with:
-          architecture: x64
-      - run: |
-          git config --global --add safe.directory /opt/hostedtoolcache/flutter/${{ steps.flutter-action.outputs.CHANNEL }}-${{ steps.flutter-action.outputs.VERSION }}-${{ steps.flutter-action.outputs.ARCHITECTURE }}
-          flutter --version
 
+    steps:
+      - name: 'Set Flutter 3.10.6'
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.10.6
+
+      - name: 'Checkout Flutter 3.10.7'
+        shell: bash
+      - run: |
+          cd $FLUTTER_ROOT;
+          git fetch --tags;
+          git checkout 3.10.7;
+          flutter --version;
 
 
       - name: Install dependencies
