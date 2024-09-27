@@ -43,3 +43,4 @@ app.*.map.json
 
 lib/utils/constants.dart
 /build/app/outputs/
+node_modules/
