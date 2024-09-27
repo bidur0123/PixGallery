@@ -18,9 +18,6 @@ jobs:
         with:
           flutter-version: '3.24.3'
 
-      - name: Display Flutter version
-        run: flutter --version
-
       - name: Install dependencies
         run: flutter pub get
 
