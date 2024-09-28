@@ -16,7 +16,7 @@ class ImageDetailScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Image Details'),
+        title: const Text('Image View'),
       ),
       body: SingleChildScrollView(
         child: Padding(
